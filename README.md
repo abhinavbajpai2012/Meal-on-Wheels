@@ -34,13 +34,13 @@ Let O and D be the origin and destination points of the route respectively.
 Let P1, P2, P3 … Pn be the points lying on the route at distance y, 2y, 3y, … , ny respectively from the origin such that distance of O and D is (n+1)y.
 
 <p align="center">
-  <img src="Overview.png" width="1000" height = "1000"/>
+  <img src="Overview.png"/>
 </p>
 
 Now, considering each of the above point as a centre of circle of radius x km. Let us consider the scenario of one such circle.
 
 <p align="center">
-  <img src="Magnification.png" width="700" height="700"/>
+  <img src="Magnification.png"/>
 </p>
 
 Suppose r1, r2, r3, r4 etc. are the locations of eating joints lying within the circle. We will then find the points having latitudemin(E_S), latitudemax(E_N), longitudemin(E_W) and longitudemax(E_E) lying on the circumference of circle using the following formula:
