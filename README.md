@@ -1,4 +1,4 @@
-### Meal on Wheels
+# Meal on Wheels
 This programme is to develop an android application and website, which will create a database of the Eating Joints falling with the Origin and Destination Points of the journey and placing the orders as per the available Menu at particular​ ​ Eating​ ​ Joint​ ​ with​ ​ time​ ​ of​ ​ Service.
 
 ## Brief Solution:
@@ -10,14 +10,14 @@ Our platform would include user authentication and thus would enable us to maint
 
 ## Description of Technology:
 
-# Structure of Database: 
+### Structure of Database: 
 * We will be using MySQL database management system for our data storing requirements. 
 * Our data base will consist of tables for storing information about the users and various eating joints.
 * The user specific table will consist of data points such as name, mobile, email, unique ID etc.
 * Information about eating joints will comprise of name, unique code and location (in the form of latitude and longitude). 
 * We will be storing the menus of various eating joints in separate JSON files whose link will be stored along with other     information of the eating joints in the concerned table.
 
-# Functionality of app:
+### Functionality of app:
 * The user will have the option of logging-in via their mobile number or through their Facebook/Google account.
 * Upon successful authentication, the user will have to enter their destination by Entering address or by placing marker on  the map.
 * The current location will be fetched by our app through GPS or it can be Entered manually by the user. 
