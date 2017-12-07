@@ -42,4 +42,9 @@ where    φ is latitude, λ is longitude, θ is the bearing (clockwise from nort
 
 ![Image of Overview]
 (https://github.com/Not-Decided/Meal-on-Wheels/blob/master/Overview.png)
+
+<p align="center">
+  <img src="Overview.png" width="350"/>
+</p>
+
 Following is the implentation of above formula in javascript:
