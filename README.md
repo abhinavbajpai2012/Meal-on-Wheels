@@ -27,3 +27,19 @@ Our platform would include user authentication and thus would enable us to maint
 * After selecting the preferred eating joint, the user will be provided with the menu of the selected eating joint. 
 * The user will then be able to select food items and place their order with the eating joint. 
 * The order will be confirmed by the respective eating joint through confirmation call. The user can then directly start navigation to the concerned eating joint.
+
+
+Suppose r1, r2, r3, r4 etc. are the locations of eating joints lying within the circle. We will then find the points having latitudemin(E_S), latitudemax(E_N), longitudemin(E_W) and longitudemax(E_E) lying on the circumference of circle using the following formula:
+φ2 = asin( sin φ1 ⋅ cos δ + cos φ1 ⋅ sin δ ⋅ cos θ )
+λ2 = λ1 + atan2( sin θ ⋅ sin δ ⋅ cos φ1, cos δ − sin φ1 ⋅ sin φ2 )
+Bearing: 0 gives max longitude 
+Bearing 180 gives min longitude 
+bearing 90 gives min latitude 
+bearing -90 gives max latitude 
+(all angles in radians)
+
+where    φ is latitude, λ is longitude, θ is the bearing (clockwise from north), δ is the angular distance x/R; x being the radius of circle, R the earth’s radius.
+
+![Image of Overview]
+(https://github.com/Not-Decided/Meal-on-Wheels/blob/master/Overview.png)
+Following is the implentation of above formula in javascript:
