@@ -34,13 +34,13 @@ Let O and D be the origin and destination points of the route respectively.
 Let P1, P2, P3 … Pn be the points lying on the route at distance y, 2y, 3y, … , ny respectively from the origin such that distance of O and D is (n+1)y.
 
 <p align="center">
-  <img src="Overview.png" width="700"/>
+  <img src="Overview.png" width="1000" height = "1000"/>
 </p>
 
 Now, considering each of the above point as a centre of circle of radius x km. Let us consider the scenario of one such circle.
 
 <p align="center">
-  <img src="Magnification.png" width="400"/>
+  <img src="Magnification.png" width="700" height="700"/>
 </p>
 
 Suppose r1, r2, r3, r4 etc. are the locations of eating joints lying within the circle. We will then find the points having latitudemin(E_S), latitudemax(E_N), longitudemin(E_W) and longitudemax(E_E) lying on the circumference of circle using the following formula:
@@ -67,3 +67,9 @@ Following is the implentation of above formula in javascript:
     var λ2 = λ1 + Math.atan2(Math.sin(brng)*Math.sin(d/R)*Math.cos(φ1),
                         Math.cos(d/R)-Math.sin(φ1)*Math.sin(φ2));
 ```
+
+
+Now, we have latmin(E_S), latmax(E_S), longmin(E_W) and longmax(E_E) of the circle of radius x encircling the eating joints with centre ‘p’. We’ll find minimum latitude, minimum longitude, maximum latitude, maximum longitude of all points P1 to Pn.
+
+Now, we’ll find restaurants for each point lying within the circle by using binary search algorithm which will search all the available restaurants in logarithm time. The algorithm for binary search is implemented as follows:
+
