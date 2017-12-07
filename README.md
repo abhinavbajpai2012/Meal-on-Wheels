@@ -28,23 +28,42 @@ Our platform would include user authentication and thus would enable us to maint
 * The user will then be able to select food items and place their order with the eating joint. 
 * The order will be confirmed by the respective eating joint through confirmation call. The user can then directly start navigation to the concerned eating joint.
 
+# Algorithm to find Eating Joints near to the selected route: 
+
+Let O and D be the origin and destination points of the route respectively.
+Let P1, P2, P3 … Pn be the points lying on the route at distance y, 2y, 3y, … , ny respectively from the origin such that distance of O and D is (n+1)y.
+
+<p align="center">
+  <img src="Overview.png" width="700"/>
+</p>
+
+Now, considering each of the above point as a centre of circle of radius x km. Let us consider the scenario of one such circle.
+
+<p align="center">
+  <img src="Magnification.png" width="400"/>
+</p>
 
 Suppose r1, r2, r3, r4 etc. are the locations of eating joints lying within the circle. We will then find the points having latitudemin(E_S), latitudemax(E_N), longitudemin(E_W) and longitudemax(E_E) lying on the circumference of circle using the following formula:
+
 φ2 = asin( sin φ1 ⋅ cos δ + cos φ1 ⋅ sin δ ⋅ cos θ )
 λ2 = λ1 + atan2( sin θ ⋅ sin δ ⋅ cos φ1, cos δ − sin φ1 ⋅ sin φ2 )
-Bearing: 0 gives max longitude 
-Bearing 180 gives min longitude 
-bearing 90 gives min latitude 
-bearing -90 gives max latitude 
+
+Bearing = 0 gives max longitude 
+Bearing = 180 gives min longitude 
+bearing = 90 gives min latitude 
+bearing = -90 gives max latitude 
 (all angles in radians)
 
 where    φ is latitude, λ is longitude, θ is the bearing (clockwise from north), δ is the angular distance x/R; x being the radius of circle, R the earth’s radius.
 
-![Image of Overview]
-(https://github.com/Not-Decided/Meal-on-Wheels/blob/master/Overview.png)
 
-<p align="center">
-  <img src="Overview.png" width="350"/>
-</p>
 
 Following is the implentation of above formula in javascript:
+
+```javascript
+    var φ2 = Math.asin( Math.sin(φ1)*Math.cos(d/R) +
+                   Math.cos(φ1)*Math.sin(d/R)*Math.cos(brng) );
+
+    var λ2 = λ1 + Math.atan2(Math.sin(brng)*Math.sin(d/R)*Math.cos(φ1),
+                        Math.cos(d/R)-Math.sin(φ1)*Math.sin(φ2));
+```
